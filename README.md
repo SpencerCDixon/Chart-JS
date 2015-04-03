@@ -2,7 +2,9 @@
 
 **Setup**:
 
-1.  Download Chart.js from their [website.](http://www.chartjs.org/)
+### Download
+
+Download Chart.js from their [website.](http://www.chartjs.org/)
 
 If you have bower installed you can use it to fetch Chart.js like this:
 
@@ -10,7 +12,9 @@ If you have bower installed you can use it to fetch Chart.js like this:
 bower install Chart.js --save
 ```
 
-2.  Once you have the chart.js or chart.min.js file you want to move it to your
+### Adding directive
+
+Once you have the chart.js or chart.min.js file you want to move it to your
 `vendor/assets/javascripts` directory.  In order for the Rails Asset Pipeline to
 include your JS file we need to add a line to application.js:
 
@@ -40,7 +44,7 @@ Here is the line to add:
 **Note**: if you are using the `chart.min.js` file then you might need to type
 in `//= require chart.min`
 
-3. Setting up global config:
+###  Setting up global config:
 
 Chart.js has a global configuration object that allows you to make adjustments
 to all charts in your application.  You can either just include that in
@@ -176,7 +180,7 @@ Go ahead and add this to your application.js:
 ```
 **Note**: Make sure it is inside your jquery `$(function(){}` block.
 
-4.  Adding the canvas:  
+###  Adding the canvas:  
 
 
 Chart.js takes advantage of HTML5 canvas in order to display the graphs.  In
@@ -187,7 +191,7 @@ order to render a graph we need to create a blank canvas in one of our views.
 <canvas id="myChart" width="400" height"400"></canvas>
 ```
 
-5.  Find the canvas and add a graph to it:
+### Find the canvas and add a graph to it:
 
 First we need to grab the canvas and call the `.getContext()` method in order
 for the canvas to be drawable.  Then we can instantiate a new chart with
@@ -226,6 +230,10 @@ var data = {
 
 var myLineChart = new Chart(ctx).Line(data); // instantiate new graph with data
 ```
+
+There you have it! Now chart.js is set up in your app.  View their [websites
+documentation](http://www.chartjs.org/docs/) in order to learn more about the
+different types of graphs you can make.
 
 
 
